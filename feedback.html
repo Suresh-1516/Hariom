@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        HARI OM
+    </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="super" id="me">
+
+        <div class="cont">
+            <img src="/logo.png" style="width: 50%;">
+            <div class="title">
+                <h1 style="color: rgb(138, 209, 57);font-size: 400%;">HARI OM</h1>
+            </div>
+
+            <p style="font-size:320% ;color: #000000;">Sweets & Bakery</p>
+        </div>
+        <div class="cont">
+            <p
+                style="font-size:450% ;color: rgb(25, 210, 243);font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                Review Our Service And Food</p>
+            <div class="stars">
+                <input onclick="Open()" class="star star-5" id="star-5-2" type="radio" name="star" />
+                <label class="star star-5" for="star-5-2"></label>
+                <input onclick="Open()" class="star star-4" id="star-4-2" type="radio" name="star" />
+                <label class="star star-4" for="star-4-2"></label>
+                <input onclick="Open()" class="star star-3" id="star-3-2" type="radio" name="star" />
+                <label class="star star-3" for="star-3-2"></label>
+                <input class="star star-2" id="star-2-2" type="radio" name="star" />
+                <label class="star star-2" for="star-2-2"></label>
+                <input class="star star-1" id="star-1-2" type="radio" name="star" />
+                <label class="star star-1" for="star-1-2"></label>
+
+                <div class="rev-box">
+                    <form onsubmit="sebdEmail(event)" method="post" role="form">
+                        <input id="num" type="tel" required placeholder="Enter Number ( 9181215475 ) "
+                            style="height: 100px;" maxlength="10" minlength="10">
+                        <textarea id="msg" class="review" col="30" name="review" placeholder="Enter Your Feedback Hear"
+                            required></textarea>
+                        <br>
+                        <br> <br>
+                        <button class="button-85" role="button" id="subbtn" type="submit">Submit</button>
+
+                        <br>
+                        <br>
+                    </form>
+                </div>
+
+                <script src="https://smtpjs.com/v3/smtp.js"></script>
+                <script>
+
+
+                    // form Submit
+
+                    function sebdEmail(e) {
+
+                        e.preventDefault();
+
+                        var para = new URLSearchParams(window.location.search);
+                        var pass = para.get("KEY");
+
+                        let png = "Store Name : " + pass + " Customer Number : " + document.getElementById('num').value + "\t      " + "Feedback : " + document.getElementById('msg').value;
+
+                        Email.send({
+                            Host: "smtp.elasticemail.com",
+                            Username: "hariomsweetbakery@gmail.com",
+                            Password: "4FA943E0CE12E37514C7D7A71B1FD2C0275D",
+                            To: "hariomsweetbakery@gmail.com",
+                            From: "hariomsweetbakery@gmail.com",
+                            Subject: "FeedBack From Customer",
+                            Body: png
+                        }).then(
+
+                            message => {
+
+                                if (message == 'OK') {
+                                    alert("Your Feedback Has Been Sent. Thank you!");
+                                    window.location.pathname = "thnx.html";
+
+                                }
+                                else {
+                                    console.error(message);
+                                    alert('Error At Sending Feedback !')
+                                }
+
+                            }
+
+                        );
+                    }
+                </script>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: roboto;
+    }
+
+    .button-85 {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        font-size: 50px;
+    }
+
+    .button-85:before {
+        content: "";
+        background: linear-gradient(45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    @keyframes glowing-button-85 {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .button-85:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    body {
+        background: rgba(250, 201, 201, 0.2);
+    }
+
+    .cont,
+    .thankyou,
+    .social {
+        width: 100%;
+        text-align: center;
+        margin: 4% auto;
+        padding: 30px 0;
+        color: #eee;
+        overflow: hidden;
+    }
+
+    hr {
+        margin: 20px;
+        border: none;
+        border-bottom: thin solid rgba(255, 255, 255, 0.1);
+    }
+
+    div.title {
+        font-size: 2em;
+    }
+
+    h1 span {
+        font-weight: 300;
+        color: #fd4;
+
+    }
+
+    div.stars {
+        width: 60%;
+        margin-top: 100px;
+        display: inline-block;
+    }
+
+    input.star {
+        display: none;
+    }
+
+    label.star {
+        float: right;
+        padding: 10px;
+        font-size: 100px;
+        color: #804141;
+        transition: all 0.2s;
+    }
+
+    input.star:checked~label.star:before {
+        content: "\f005";
+        color: #fd4;
+        transition: all 0.25s;
+    }
+
+    input.star-5:checked~label.star:before {
+        color: #fe7;
+        text-shadow: 0 0 20px #952;
+    }
+
+    input.star-1:checked~label.star:before {
+        color: #f62;
+    }
+
+    label.star:hover {
+        transform: rotate(-15deg) scale(1.3);
+    }
+
+    label.star:before {
+        content: "\f006";
+        font-family: FontAwesome;
+    }
+
+    .rev-box {
+        overflow: hidden;
+        height: 0;
+        width: 100%;
+        transition: all 0.25s;
+    }
+
+    textarea.review,
+    #num {
+        background: #ffffff;
+        width: 150%;
+        height: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+        color: #000000;
+        font-size: 50px;
+        margin-top: 100px;
+        margin-left: -145px;
+        margin-bottom: 50px;
+    }
+
+    label.review {
+        display: block;
+        transition: opacity 0.25s;
+    }
+
+    input.star:checked~.rev-box {
+        height: 125px;
+        overflow: visible;
+    }
+</style>
+
+<script>
+    function Open() {
+        var para = new URLSearchParams(window.location.search);
+        var pass = para.get("KEY");
+        
+        var text1 = "Hariom_Bakery_Naroda";
+        let result1 = text1.localeCompare(pass);
+
+        var text2 = "Hariom_Kathwada";
+        let result2 = text2.localeCompare(pass);
+
+        var text3 = "Hariom_Sweet_Naroda";
+        let result3 = text3.localeCompare(pass);
+
+        var text4 = "Hariom_Vastral";
+        let result4 = text4.localeCompare(pass);
+
+
+        if (pass != null) {
+            
+            if (result1 == 0) {
+                location.replace("https://g.page/r/Cdv47EZbbSDUEAI/review");
+            }
+
+            if (result2 == 0) {
+                location.replace("https://g.page/r/CZzUgJ1fC2T1EB0/review");
+            }
+
+            if (result3 == 0) {
+                location.replace("https://g.page/r/Ce6XOi5qPP97EBM/review");
+            }
+
+            if (result4 == 0) {
+                location.replace("https://g.page/r/CYyCthDNVDs8EBM/review");
+            }
+        }
+        else
+        {
+            alert("Note : Please Go Back And Select The Branch !");
+        }
+
+
+
+    }
+</script>
+
+</html>

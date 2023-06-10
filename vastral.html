@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        HARI OM
+    </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/logo.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body style="margin:0;">
+
+
+    <div class="main" style="width: 100%;margin-bottom: -100px;">
+
+        <img src="/logo.png" style="max-width: 70%;">
+        <div class="title">
+            <h1 style="color: rgb(138, 209, 57);font-size: 110px;font-weight: bolder;margin-top: -10px;">HARI OM</h1>
+        </div>
+        <p style="font-size:55px ;color: #000000;margin-top: -70px;">Sweets & Bakery</p>
+        <p style="font-size:55px ;color: #000000;margin-top: -70px;">Vastral</p>
+
+    </div>
+
+    <div class="stor" style="width: 100%;margin-top: 100px;">
+        <br>
+        <a href="https://goo.gl/maps/hQd8ZzJf2uZBtpL28"><button><img src="location.png"
+                    style="width: 50%;">Location</button></a><br>
+        <br>
+        <br>
+        <a onclick="Open()"><button style="width: 65%;"><img src="feedback.png" style="width: 50%;"><br>Feedback</button></a>
+
+    </div>
+    <br>
+    <hr>
+
+    <div class="footar" style="width: 100%;">
+
+        <div style="width: 100%;">
+            <strong>
+                <p
+                    style="color: #d415db;font-size: 400%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                    -: Follow Us On :- </p>
+            </strong>
+            <br>
+            <a href="https://www.facebook.com/Hariom.Sweet.And.Bakery/"> <img src="facebook.png"
+                    style="width: 20%;margin-right: 80px;"></a>
+
+            <a href="https://instagram.com/hariom_sweets_and_bakery?igshid=OGQ5ZDc2ODk2ZA=="> <img src="instagram.png"
+                    style="width: 20%;margin-left: 0px;margin-right: 50px;"></a>
+
+            <a href="https://api.whatsapp.com/send?phone=918758583795"> <img src="whatsapp.png"
+                    style="width: 20%;margin-right: 25px;margin-left: 30px;"></a>
+
+
+            <h1
+                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin-top: 100px;font-size: 60px;color: #000000;">
+                @ hariom_sweets_and_bakery</h1>
+        </div>
+    </div>
+
+
+</body>
+<style>
+    body {
+        background: rgba(221, 218, 218, 0.1);
+    }
+
+    .main,
+    .store,
+    .stor,
+    .footar {
+        width: 100%;
+        text-align: center;
+        margin: 4% auto;
+        padding: 30px 0;
+        color: #eee;
+        overflow: hidden;
+    }
+
+    button {
+        font-size: 60px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+        padding: 0.7em 2em;
+        border: 3px solid #FF0072;
+        border-radius: 2px;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+        color: #FF0072;
+        text-decoration: none;
+        transition: 0.3s ease all;
+        z-index: 1;
+    }
+
+    button:before {
+        transition: 0.5s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        content: '';
+        background-color: #FF0072;
+        z-index: -1;
+    }
+
+    button:hover,
+    button:focus {
+        color: white;
+    }
+
+    button:hover:before,
+    button:focus:before {
+        transition: 0.5s all ease;
+        left: 0;
+        right: 0;
+        opacity: 1;
+    }
+
+    button:active {
+        transform: scale(0.9);
+    }
+</style>
+
+<script>
+    function Open() {
+        var para = new URLSearchParams();
+        para.append("KEY", "Hariom_Vastral");
+        location.href = "feedback.html?" + para.toString();
+    }
+</script>
+
+</html>
